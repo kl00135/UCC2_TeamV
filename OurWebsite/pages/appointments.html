@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Appointments</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <script src="js/appointment.js" async></script>
+  <script src="../js/appointment.js"></script>
 </head>
 <body class="bg-purple-100 text-gray-800 min-h-screen flex flex-col">
 
@@ -30,44 +30,24 @@
     <div class="bg-white p-6 rounded-lg shadow-md">
       <h2 class="text-2xl font-semibold text-purple-800 mb-4">Upcoming Appointments</h2>
 
-      <!-- Appointment List -->
-      <div class="space-y-4">
-        <div class="bg-purple-600 p-4 rounded-lg shadow-sm">
-          <h3 class="text-xl font-semibold text-black">Dentist Appointment</h3>
-          <p class="text-black"><strong>Date:</strong> 10/15/2025</p>
-          <p class="text-black"><strong>Time:</strong> 2:00 PM</p>
-          <p class="text-black"><strong>Location:</strong> Smile Dental Clinic</p>
-        </div>
-
-        <div class="bg-purple-300 p-4 rounded-lg shadow-sm">
-          <h3 class="text-xl font-semibold text-purple-800">Doctor's Appointment</h3>
-          <p class="text-black"><strong>Date:</strong> 11/01/2025</p>
-          <p class="text-black"><strong>Time:</strong> 9:30 AM</p>
-          <p class="text-black"><strong>Location:</strong> General Health Clinic</p>
-        </div>
-
-        <div class="bg-purple-600 p-4 rounded-lg shadow-sm">
-          <h3 class="text-xl font-semibold text-black">Eye Exam</h3>
-          <p class="text-black"><strong>Date:</strong> 12/05/2025</p>
-          <p class="text-black"><strong>Time:</strong> 11:00 AM</p>
-          <p class="text-black"><strong>Location:</strong> Target</p>
-        </div>
+      <!-- Appointment List Container -->
+      <div id="appointmentCardContainer" class="flex flex-col justify-start gap-6 w-full">
+        <!-- Existing Appointment Cards will be injected here -->
       </div>
 
-      <button id="editAppointmentsBtn" class="mt-6 inline-block px-6 py-2 bg-purple-600 text-black font-semibold rounded-lg hover:bg-purple-700">
-        Edit Appointments
-      </button>
+      <!-- Add & Remove Buttons -->
+      <div class="mt-6 flex gap-4">
+        <button id="addAppointmentBtn" class="px-6 py-2 bg-green-500 text-white font-semibold rounded-lg hover:bg-green-600">
+          Add Appointment
+        </button>
+      </div>
     </div>
   </main>
 
-  <div id="editAppointmentModal" class="hidden fixed inset-0 bg-gray-900 bg-opacity-50 flex items-center justify-center z-50">
+  <!-- Modal for Appointment -->
+  <div id="appointmentModal" class="hidden fixed inset-0 bg-gray-900 bg-opacity-50 flex items-center justify-center z-50">
     <div class="bg-white p-6 rounded-lg shadow-md max-w-sm w-full">
-        <h3 class="text-2xl font-semibold text-purple-800 mb-4">Edit Appointment</h3>
-
-        <!-- Success Message -->
-        <div id="appointmentSuccess" class="hidden text-green-600 font-semibold mb-4">
-            Appointment updated successfully!
-        </div>
+      <h3 class="text-2xl font-semibold text-purple-800 mb-4">Edit Appointment</h3>
 
       <!-- Appointment Form -->
       <form id="appointmentForm" class="space-y-4">
@@ -101,30 +81,31 @@
 
   <!-- Footer -->
   <style>
-        .footer-socials {display: flex; justify-content: center; align-items: center; margin-bottom: 10px;}
-        .footer-socials img { width: 24px; height: 24px; margin: 0 10px;}
-        .footer-links { text-align: center;}
-        .footer-links ul { list-style: none; padding: 0; margin: 0;}
-        .footer-links li { display: inline; margin: 0 15px;}
-        .footer-links a { text-decoration: none; color: #333; font-weight: bold;}
-    </style>
-  <footer class="bg-purple-300 text-black text-center py-4">
-	<div class="footer-socials">
+    .footer-socials {display: flex; justify-content: center; align-items: center; margin-bottom: 10px;}
+    .footer-socials img { width: 24px; height: 24px; margin: 0 10px;}
+    .footer-links { text-align: center;}
+    .footer-links ul { list-style: none; padding: 0; margin: 0;}
+    .footer-links li { display: inline; margin: 0 15px;}
+    .footer-links a { text-decoration: none; color: #333; font-weight: bold;}
+</style>
+<footer class="bg-purple-300 text-black text-center py-4">
+<div class="footer-socials">
 <img src="../images/twitter.png" alt="Twitter">
 <img src="../images/instagram.png" alt="Instagram">
 <img src="../images/youtube.png" alt="YouTube">
 <img src="../images/linkedin.png" alt="LinkedIn">
-        </div>
-        <div class="footer-links">
-            <ul>
-                <li><a href="transportation.html">Transportation</a></li>
-                <li><a href="prescriptions.html">Prescriptions</a></li>
-                <li><a href="appointments.html">Appointments</a></li>
-                <li><a href="help.html">Help</a></li>
-                <li><a href="account.html">My Account</a></li>
-            </ul>
-        </div>
-    <p>&copy; Pill Pilot. Cm00243@my.westga.edu</p>
+    </div>
+    <div class="footer-links">
+        <ul>
+            <li><a href="transportation.html">Transportation</a></li>
+            <li><a href="prescriptions.html">Prescriptions</a></li>
+            <li><a href="appointments.html">Appointments</a></li>
+            <li><a href="help.html">Help</a></li>
+            <li><a href="account.html">My Account</a></li>
+        </ul>
+    </div>
+<p>&copy; Pill Pilot. Cm00243@my.westga.edu</p>
 
+  
 </body>
 </html>

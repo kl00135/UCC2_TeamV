@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Prescriptions</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <script src="js/prescription.js" defer></script>
+  <script src="../js/prescriptions.js" defer></script>
 </head>
 <body class="bg-purple-100 text-gray-800 min-h-screen flex flex-col">
 
@@ -26,75 +26,51 @@
     </div>
   </header>
 
-  
+  <!-- Main content -->
   <main class="flex-grow max-w-3xl mx-auto mt-10 px-4">
     <div class="bg-white p-6 rounded-lg shadow-md">
-      <h2 class="text-2xl font-semibold text-purple-800 mb-6">Your Prescriptions</h2>
+      <h2 class="text-2xl font-semibold text-purple-800 mb-4">My Prescriptions</h2>
 
-      <!-- Prescription List -->
-      <div class="space-y-6">
-        <div class="bg-purple-600 p-4 rounded-lg shadow-sm">
-          <h3 class="text-xl font-semibold text-black">Amoxicillin</h3>
-          <p class="text-black"><strong>Prescription Date:</strong> 09/01/2025</p>
-          <p class="text-black"><strong>Dosage:</strong> 500 mg, 3 times a day</p>
-          <p class="text-black"><strong>Refills:</strong> 1</p>
-        </div>
+      <div id="prescriptionCardContainer" class="flex flex-col gap-6 w-full">
+        <!-- Prescription cards go here -->
+      </div>
 
-        <div class="bg-purple-300 p-4 rounded-lg shadow-sm">
-          <h3 class="text-xl font-semibold text-black">Ibuprofen</h3>
-          <p class="text-black"><strong>Prescription Date:</strong> 09/15/2025</p>
-          <p class="text-black"><strong>Dosage:</strong> 200 mg, every 4-6 hours as needed</p>
-          <p class="text-black"><strong>Refills:</strong> 0</p>
-        </div>
-
-        <div class="bg-purple-600 p-4 rounded-lg shadow-sm">
-          <h3 class="text-xl font-semibold text-black">Lisinopril</h3>
-          <p class="text-black"><strong>Prescription Date:</strong> 10/01/2025</p>
-          <p class="text-black"><strong>Dosage:</strong> 10 mg, once daily</p>
-          <p class="text-black"><strong>Refills:</strong> 3</p>
-        </div>
-
-        <button id="editPrescriptionsBtn" class="mt-6 inline-block px-6 py-2 bg-purple-600 text-black font-semibold rounded-lg hover:bg-purple-700 ">
-            Edit Prescriptions
+      <div class="mt-6 flex gap-4">
+        <button id="addPrescriptionBtn" class="px-6 py-2 bg-green-500 text-white font-semibold rounded-lg hover:bg-green-600">
+          Add Prescription
         </button>
       </div>
     </div>
   </main>
 
-  <!-- Modal Form -->
-  <div id="editPrescriptionModal" class="hidden fixed inset-0 bg-gray-900 bg-opacity-50 flex items-center justify-center">
+  <!-- Modal -->
+  <div id="prescriptionModal" class="hidden fixed inset-0 bg-gray-900 bg-opacity-50 flex items-center justify-center z-50">
     <div class="bg-white p-6 rounded-lg shadow-md max-w-sm w-full">
       <h3 class="text-2xl font-semibold text-purple-800 mb-4">Edit Prescription</h3>
 
-      <!-- Success Message -->
-      <div id="successMessage" class="hidden text-green-600 font-semibold mb-4">
-        <p>Your prescription has been successfully updated!</p>
-      </div>
-
-      <!-- Prescription Form -->
       <form id="prescriptionForm" class="space-y-4">
         <div>
-          <label for="prescriptionName" class="block text-gray-700 font-semibold">Prescription Name</label>
-          <input type="text" id="prescriptionName" name="prescriptionName" required class="w-full p-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-purple-500" placeholder="Enter prescription name">
-        </div>
-
-        <div>
-          <label for="prescriptionDate" class="block text-gray-700 font-semibold">Prescription Date</label>
-          <input type="date" id="prescriptionDate" name="prescriptionDate" required class="w-full p-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-purple-500">
+          <label for="medicationName" class="block text-gray-700 font-semibold">Medication Name</label>
+          <input type="text" id="medicationName" required class="w-full p-3 border border-gray-300 rounded focus:ring-2 focus:ring-purple-500">
         </div>
 
         <div>
           <label for="dosage" class="block text-gray-700 font-semibold">Dosage</label>
-          <input type="text" id="dosage" name="dosage" required class="w-full p-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-purple-500" placeholder="Enter dosage instructions">
+          <input type="text" id="dosage" required class="w-full p-3 border border-gray-300 rounded focus:ring-2 focus:ring-purple-500" placeholder="e.g., 10mg twice a day">
         </div>
 
         <div>
-          <label for="refills" class="block text-gray-700 font-semibold">Refills</label>
-          <input type="number" id="refills" name="refills" required class="w-full p-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-purple-500" placeholder="Enter number of refills">
+          <label for="prescribingDoctor" class="block text-gray-700 font-semibold">Prescribing Doctor</label>
+          <input type="text" id="prescribingDoctor" required class="w-full p-3 border border-gray-300 rounded focus:ring-2 focus:ring-purple-500">
+        </div>
+
+        <div>
+          <label for="pharmacy" class="block text-gray-700 font-semibold">Pharmacy</label>
+          <input type="text" id="pharmacy" required class="w-full p-3 border border-gray-300 rounded focus:ring-2 focus:ring-purple-500">
         </div>
 
         <div class="flex justify-between">
-          <button type="button" onclick="closeModal()" class="bg-gray-500 text-white px-4 py-2 rounded-lg hover:bg-gray-600">Cancel</button>
+          <button type="button" onclick="closePrescriptionModal()" class="bg-gray-500 text-white px-4 py-2 rounded-lg hover:bg-gray-600">Cancel</button>
           <button type="submit" class="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700">Save</button>
         </div>
       </form>
@@ -103,30 +79,29 @@
 
   <!-- Footer -->
   <style>
-        .footer-socials {display: flex; justify-content: center; align-items: center; margin-bottom: 10px;}
-        .footer-socials img { width: 24px; height: 24px; margin: 0 10px;}
-        .footer-links { text-align: center;}
-        .footer-links ul { list-style: none; padding: 0; margin: 0;}
-        .footer-links li { display: inline; margin: 0 15px;}
-        .footer-links a { text-decoration: none; color: #333; font-weight: bold;}
-    </style>
-  <footer class="bg-purple-300 text-black text-center py-4">
-	<div class="footer-socials">
+    .footer-socials {display: flex; justify-content: center; align-items: center; margin-bottom: 10px;}
+    .footer-socials img { width: 24px; height: 24px; margin: 0 10px;}
+    .footer-links { text-align: center;}
+    .footer-links ul { list-style: none; padding: 0; margin: 0;}
+    .footer-links li { display: inline; margin: 0 15px;}
+    .footer-links a { text-decoration: none; color: #333; font-weight: bold;}
+</style>
+<footer class="bg-purple-300 text-black text-center py-4">
+<div class="footer-socials">
 <img src="../images/twitter.png" alt="Twitter">
 <img src="../images/instagram.png" alt="Instagram">
 <img src="../images/youtube.png" alt="YouTube">
 <img src="../images/linkedin.png" alt="LinkedIn">
-        </div>
-        <div class="footer-links">
-            <ul>
-                <li><a href="transportation.html">Transportation</a></li>
-                <li><a href="prescriptions.html">Prescriptions</a></li>
-                <li><a href="appointments.html">Appointments</a></li>
-                <li><a href="help.html">Help</a></li>
-                <li><a href="account.html">My Account</a></li>
-            </ul>
-        </div>
-    <p>&copy; Pill Pilot. Cm00243@my.westga.edu</p>
-
+    </div>
+    <div class="footer-links">
+        <ul>
+            <li><a href="transportation.html">Transportation</a></li>
+            <li><a href="prescriptions.html">Prescriptions</a></li>
+            <li><a href="appointments.html">Appointments</a></li>
+            <li><a href="help.html">Help</a></li>
+            <li><a href="account.html">My Account</a></li>
+        </ul>
+    </div>
+<p>&copy; Pill Pilot. Cm00243@my.westga.edu</p>
 </body>
 </html>

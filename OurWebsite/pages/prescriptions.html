@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Prescriptions</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="../js/prescriptions.js" defer></script>
+</head>
+<body class="bg-purple-100 text-gray-800 min-h-screen flex flex-col">
+
+  <!-- Top bar -->
+  <header class="bg-purple-300 text-black p-4">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center">
+      <h1 class="text-2xl font-bold mb-2 md:mb-0">Pill Pilot</h1>
+      <nav class="flex flex-wrap gap-4 items-center">
+        <a href="index.html" class="hover:underline">Home</a>
+        <a href="transportation.html" class="hover:underline">Transportation</a>
+        <a href="prescriptions.html" class="hover:underline font-semibold underline">Prescriptions</a>
+        <a href="appointments.html" class="hover:underline">Appointments</a>
+        <a href="account.html" class="hover:underline">My Account</a>
+        <a href="help.html" class="hover:underline">Help</a>
+        <a href="login.html" class="bg-white text-blue-600 px-3 py-1 rounded hover:bg-gray-200 font-medium">Login</a>
+        <a href="register.html" class="bg-white text-blue-600 px-3 py-1 rounded hover:bg-gray-200 font-medium">Register</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main content -->
+  <main class="flex-grow max-w-3xl mx-auto mt-10 px-4">
+    <div class="bg-white p-6 rounded-lg shadow-md">
+      <h2 class="text-2xl font-semibold text-purple-800 mb-4">My Prescriptions</h2>
+
+      <div id="prescriptionCardContainer" class="flex flex-col gap-6 w-full">
+        <!-- Prescription cards go here -->
+      </div>
+
+      <div class="mt-6 flex gap-4">
+        <button id="addPrescriptionBtn" class="px-6 py-2 bg-green-500 text-white font-semibold rounded-lg hover:bg-green-600">
+          Add Prescription
+        </button>
+      </div>
+    </div>
+  </main>
+
+  <!-- Modal -->
+  <div id="prescriptionModal" class="hidden fixed inset-0 bg-gray-900 bg-opacity-50 flex items-center justify-center z-50">
+    <div class="bg-white p-6 rounded-lg shadow-md max-w-sm w-full">
+      <h3 class="text-2xl font-semibold text-purple-800 mb-4">Edit Prescription</h3>
+
+      <form id="prescriptionForm" class="space-y-4">
+        <div>
+          <label for="medicationName" class="block text-gray-700 font-semibold">Medication Name</label>
+          <input type="text" id="medicationName" required class="w-full p-3 border border-gray-300 rounded focus:ring-2 focus:ring-purple-500">
+        </div>
+
+        <div>
+          <label for="dosage" class="block text-gray-700 font-semibold">Dosage</label>
+          <input type="text" id="dosage" required class="w-full p-3 border border-gray-300 rounded focus:ring-2 focus:ring-purple-500" placeholder="e.g., 10mg twice a day">
+        </div>
+
+        <div>
+          <label for="prescribingDoctor" class="block text-gray-700 font-semibold">Prescribing Doctor</label>
+          <input type="text" id="prescribingDoctor" required class="w-full p-3 border border-gray-300 rounded focus:ring-2 focus:ring-purple-500">
+        </div>
+
+        <div>
+          <label for="pharmacy" class="block text-gray-700 font-semibold">Pharmacy</label>
+          <input type="text" id="pharmacy" required class="w-full p-3 border border-gray-300 rounded focus:ring-2 focus:ring-purple-500">
+        </div>
+
+        <div class="flex justify-between">
+          <button type="button" onclick="closePrescriptionModal()" class="bg-gray-500 text-white px-4 py-2 rounded-lg hover:bg-gray-600">Cancel</button>
+          <button type="submit" class="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700">Save</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <style>
+    .footer-socials {display: flex; justify-content: center; align-items: center; margin-bottom: 10px;}
+    .footer-socials img { width: 24px; height: 24px; margin: 0 10px;}
+    .footer-links { text-align: center;}
+    .footer-links ul { list-style: none; padding: 0; margin: 0;}
+    .footer-links li { display: inline; margin: 0 15px;}
+    .footer-links a { text-decoration: none; color: #333; font-weight: bold;}
+</style>
+<footer class="bg-purple-300 text-black text-center py-4">
+<div class="footer-socials">
+<img src="../images/twitter.png" alt="Twitter">
+<img src="../images/instagram.png" alt="Instagram">
+<img src="../images/youtube.png" alt="YouTube">
+<img src="../images/linkedin.png" alt="LinkedIn">
+    </div>
+    <div class="footer-links">
+        <ul>
+            <li><a href="transportation.html">Transportation</a></li>
+            <li><a href="prescriptions.html">Prescriptions</a></li>
+            <li><a href="appointments.html">Appointments</a></li>
+            <li><a href="help.html">Help</a></li>
+            <li><a href="account.html">My Account</a></li>
+        </ul>
+    </div>
+<p>&copy; Pill Pilot. Cm00243@my.westga.edu</p>
+</body>
+</html>

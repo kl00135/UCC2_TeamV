@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Account</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-purple-100 text-gray-800 min-h-screen flex flex-col">
+    <!-- Top bar -->
+    <header class="bg-purple-300 text-black p-4">
+      <div
+        class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center"
+      >
+        <h1 class="text-2xl font-bold mb-2 md:mb-0">Pill Pilot</h1>
+        <nav class="flex flex-wrap gap-4 items-center">
+          <a href="index.html" class="hover:underline">Home</a>
+          <a href="transportation.html" class="hover:underline"
+            >Transportation</a
+          >
+          <a href="prescriptions.html" class="hover:underline">Prescriptions</a>
+          <a href="appointments.html" class="hover:underline">Appointments</a>
+          <a href="account.html" class="hover:underline font-semibold underline"
+            >My Account</a
+          >
+          <a href="help.html" class="hover:underline">Help</a>
+          <a
+            href="login.html"
+            class="bg-white text-blue-600 px-3 py-1 rounded hover:bg-gray-200 font-medium"
+            >Login</a
+          >
+          <a
+            href="register.html"
+            class="bg-white text-blue-600 px-3 py-1 rounded hover:bg-gray-200 font-medium"
+            >Register</a
+          >
+        </nav>
+      </div>
+    </header>
+
+    <main class="grid grid-rows-[auto,1fr] w-full mt-12 mb-auto px-4 items-center justify-center gap-4">
+      <div class="bg-white w-full p-6 rounded-lg shadow-md text-center max-w-5xl">
+        <!-- Profile pic -->
+        <div class="flex justify-center mb-3">
+          <img
+            src="/OurWebsite/images/old_man.jpg"
+            alt="Profile Picture"
+            class="w-24 h-24 rounded-full border-4 border-purple-800"
+          />
+        </div>
+
+        <!-- Account Name -->
+        <h2 class="text-2xl font-semibold text-purple-800">John Doe</h2>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full">
+      <div class="bg-white p-6 rounded-lg shadow-md text-left">
+        <!-- Account/Personal Info -->
+        <p class="text-gray-700"><strong>Password:</strong> **********</p>
+        <p class="text-gray-700"><strong>Birthday:</strong> 01/01/1964</p>
+        <p class="text-gray-700"><strong>Email:</strong> johndoe@email.com</p>
+        <p class="text-gray-700"><strong>Address:</strong> 123 Road St.</p>
+        </p>
+
+        <button
+          class="mt-6 inline-block px-6 py-2 bg-purple-600 text-white font-semibold rounded-lg hover:bg-purple-700"
+          disabled
+        >
+          Update Personal Info
+        </button>
+      </div>
+
+      <div class="bg-white p-6 rounded-lg shadow-md text-left max-w-md">
+        <!-- Payment Info -->
+         <br>
+        <p class="text-gray-700">
+          <strong>Payment:</strong> **** **** **** 1947
+        </p>
+        <p class="text-gray-700">
+          <strong>Insurance Info:</strong> **** **** **** 3468
+        </p>
+        <br>
+
+        <button
+          class="mt-6 inline-block px-6 py-2 bg-purple-600 text-white font-semibold rounded-lg hover:bg-purple-700"
+          disabled
+        >
+          Update Payment Info
+        </button>
+      </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <style>
+      .footer-socials {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 10px;
+      }
+      .footer-socials img {
+        width: 24px;
+        height: 24px;
+        margin: 0 10px;
+      }
+      .footer-links {
+        text-align: center;
+      }
+      .footer-links ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      .footer-links li {
+        display: inline;
+        margin: 0 15px;
+      }
+      .footer-links a {
+        text-decoration: none;
+        color: #333;
+        font-weight: bold;
+      }
+    </style>
+    <footer class="bg-purple-300 text-black text-center py-4">
+      <div class="footer-socials">
+        <img src="../images/twitter.png" alt="Twitter" />
+        <img src="../images/instagram.png" alt="Instagram" />
+        <img src="../images/youtube.png" alt="YouTube" />
+        <img src="../images/linkedin.png" alt="LinkedIn" />
+      </div>
+      <div class="footer-links">
+        <ul>
+          <li><a href="transportation.html">Transportation</a></li>
+          <li><a href="prescriptions.html">Prescriptions</a></li>
+          <li><a href="appointments.html">Appointments</a></li>
+          <li><a href="help.html">Help</a></li>
+          <li><a href="account.html">My Account</a></li>
+        </ul>
+      </div>
+      <p>&copy; Pill Pilot. Cm00243@my.westga.edu</p>
+    </footer>
+  </body>
+</html>

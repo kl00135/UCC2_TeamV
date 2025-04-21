@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-purple-100 text-gray-800 min-h-screen flex flex-col">
+
+  <!-- Top bar -->
+  <header class="bg-purple-300 text-black p-4">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center">
+      <h1 class="text-2xl font-bold mb-2 md:mb-0">Pill Pilot</h1>
+      <nav class="flex flex-wrap gap-4 items-center">
+        <a href="index.html" class="hover:underline">Home</a>
+        <a href="transportation.html" class="hover:underline">Transportation</a>
+        <a href="prescriptions.html" class="hover:underline">Prescriptions</a>
+        <a href="appointments.html" class="hover:underline">Appointments</a>
+        <a href="account.html" class="hover:underline">My Account</a>
+        <a href="help.html" class="hover:underline">Help</a>
+        <a href="login.html" class="bg-white text-blue-600 px-3 py-1 rounded hover:bg-gray-200 font-medium">Login</a>
+        <a href="register.html" class="bg-white text-blue-600 px-3 py-1 rounded hover:bg-gray-200 font-medium">Register</a>
+      </nav>
+    </div>
+  </header>
+
+  
+  <main class="max-w-4xl mx-auto mt-10 px-4 flex-grow">
+    
+    <div class="bg-purple-800 text-white p-6 rounded-lg shadow-lg text-center mb-6">
+      <h2 class="text-3xl font-semibold">Welcome</h2>
+    </div>
+
+    
+    <section class="bg-purple-300 p-6 rounded-lg shadow">
+      <h3 class="text-xl font-semibold mb-2">Upcoming Appointments</h3>
+      <p class="text-gray-700">You have no upcoming appointments.</p>
+    </section>
+  </main>
+
+  <!-- Footer -->
+    <style>
+        .footer-socials {display: flex; justify-content: center; align-items: center; margin-bottom: 10px;}
+        .footer-socials img { width: 24px; height: 24px; margin: 0 10px;}
+        .footer-links { text-align: center;}
+        .footer-links ul { list-style: none; padding: 0; margin: 0;}
+        .footer-links li { display: inline; margin: 0 15px;}
+        .footer-links a { text-decoration: none; color: #333; font-weight: bold;}
+    </style>
+  <footer class="bg-purple-300 text-black text-center py-4">
+	<div class="footer-socials">
+<img src="../images/twitter.png" alt="Twitter">
+<img src="../images/instagram.png" alt="Instagram">
+<img src="../images/youtube.png" alt="YouTube">
+<img src="../images/linkedin.png" alt="LinkedIn">
+        </div>
+        <div class="footer-links">
+            <ul>
+                <li><a href="transportation.html">Transportation</a></li>
+                <li><a href="prescriptions.html">Prescriptions</a></li>
+                <li><a href="appointments.html">Appointments</a></li>
+                <li><a href="help.html">Help</a></li>
+                <li><a href="account.html">My Account</a></li>
+            </ul>
+        </div>
+    <p>&copy; Pill Pilot. Cm00243@my.westga.edu</p>
+  </footer>
+
+</body>
+</html>
